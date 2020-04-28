@@ -11,6 +11,7 @@ let AddTodo = ({ dispatch }) => {
         onSubmit={e => {
           e.preventDefault();
           if (!input.value.trim()) {
+            //the ref gives us access to the input value
             return;
           }
           dispatch(addTodo(input.value));
@@ -19,6 +20,8 @@ let AddTodo = ({ dispatch }) => {
       >
         <input
           ref={node => {
+            //look up react forms using refs. could also use useRef Hook
+            console.log("node", node);
             input = node;
           }}
         />
@@ -27,5 +30,5 @@ let AddTodo = ({ dispatch }) => {
     </div>
   );
 };
-AddTodo = connect()(AddTodo);
-export default AddTodo;
+const AddTodoContainer = connect()(AddTodo);
+export default AddTodoContainer;

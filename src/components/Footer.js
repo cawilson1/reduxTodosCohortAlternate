@@ -3,8 +3,9 @@ import FilterLink from "../containers/FilterLink";
 import { VisibilityFilters } from "../actions";
 
 const Footer = () => {
+  //the filter prop is called ownProps in FilterLink
   return (
-    <p>
+    <div>
       Show: <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
       {","}
       <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>Active</FilterLink>
@@ -12,7 +13,7 @@ const Footer = () => {
       <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
         Completed
       </FilterLink>
-    </p>
+    </div>
   );
 };
 

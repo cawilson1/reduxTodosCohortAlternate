@@ -1,7 +1,8 @@
 import React from "react";
-const Link = ({ active, children, onClick }) => {
+const Link = ({ active, children, boundSetVisibilityFilter }) => {
   if (active) {
-    return <span>{children}</span>;
+    console.log(children, "children");
+    return <h3 style={{ color: "green" }}>{children}</h3>;
   }
 
   return (
@@ -9,7 +10,7 @@ const Link = ({ active, children, onClick }) => {
       href=""
       onClick={e => {
         e.preventDefault();
-        onClick();
+        boundSetVisibilityFilter();
       }}
     >
       {children}
